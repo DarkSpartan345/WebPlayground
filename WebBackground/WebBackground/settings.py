@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -124,3 +125,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#auth config
+LOGIN_REDIRECT_URL='pages:pages'
+LOGOUT_REDIRECT_URL='home'
+
+#Email
+
+if DEBUG:
+    EMAIL_BACKEND="django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH=BASE_DIR / 'sent_emails'
+else:
+    pass
+#Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT=BASE_DIR / 'media'

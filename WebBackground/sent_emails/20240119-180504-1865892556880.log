@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: raruedam@udistrital.edu.co
+Date: Fri, 19 Jan 2024 23:05:04 -0000
+Message-ID: <170570550475.5228.3973733252427784098@DarkSpartan345>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8000.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8000/accounts/reset/Ng/c12a8g-ddb972df92778116fb3f88d9936ed57a/
+
+Your username, in case you’ve forgotten: Empleado
+
+Thanks for using our site!
+
+The localhost:8000 team
+
+
+
+-------------------------------------------------------------------------------

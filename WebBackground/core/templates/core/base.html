@@ -32,11 +32,27 @@
               </li>
             </ul>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/admin/">
-                  {% if request.user.is_staff %}Admin{% else %}Acceder{% endif %}
-                </a>
-              </li>
+                {% if request.user.is_authenticated %}
+                  <form id="logout-form" method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <li class="nav-item">
+                  <input class="form-control" style="Background-color:inherit; color:#ffff" type="submit" value="Salir" />
+                  </li>
+                  </form>
+                {% else %}
+                  <form id="login-form" method="post" action="{% url 'login' %}">
+                  {% csrf_token %}
+                  <li class="nav-item">
+                  <input class="form-control" style="Background-color:inherit; color:#ffff"  type="submit" value="Acceder" />
+                  </li>
+                  </form>
+                  <form id="signup-form" method="post" action="{% url 'signup' %}">
+                  {% csrf_token %}
+                  <li class="nav-item">
+                  <input class="form-control ml-2" style="Background-color:inherit; color:#ffff"  type="submit" value="Registrarse" />
+                  </li>
+                  </form>
+                {% endif %}
             </ul>
           </div>
         </div>
