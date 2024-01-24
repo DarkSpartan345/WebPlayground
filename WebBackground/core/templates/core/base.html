@@ -39,6 +39,12 @@
                   <input class="form-control" style="Background-color:inherit; color:#ffff" type="submit" value="Salir" />
                   </li>
                   </form>
+                  <form id="logout-form" method="post" action="{% url 'profile' %}">
+                  {% csrf_token %}
+                  <li class="nav-item">
+                  <input class="form-control ml-2" style="Background-color:inherit; color:#ffff" type="submit" value="Perfil" />
+                  </li>
+                  </form>
                 {% else %}
                   <form id="login-form" method="post" action="{% url 'login' %}">
                   {% csrf_token %}
