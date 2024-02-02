@@ -30,6 +30,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'pages:pages' %}">Páginas</a>
               </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'profiles:ListView' %}">Perfiles</a>
+            </li>
             </ul>
             <ul class="navbar-nav">
                 {% if request.user.is_authenticated %}
@@ -39,10 +42,13 @@
                   <input class="form-control" style="Background-color:inherit; color:#ffff" type="submit" value="Salir" />
                   </li>
                   </form>
+                  <li class="nav-item">
+                  <a class="form-control ml-2" style="Background-color:inherit; color:#ffff"  href="{% url 'messenger:ListView' %}">Mensajes</a>
+                  </li>
                   <form id="logout-form" method="post" action="{% url 'profile' %}">
                   {% csrf_token %}
                   <li class="nav-item">
-                  <input class="form-control ml-2" style="Background-color:inherit; color:#ffff" type="submit" value="Perfil" />
+                  <input class="form-control ml-3" style="Background-color:inherit; color:#ffff" type="submit" value="Perfil" />
                   </li>
                   </form>
                 {% else %}
@@ -69,5 +75,6 @@
       <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <script src="{% static 'core/js/main.js' %}"></script>
+      
   </body>
 </html>

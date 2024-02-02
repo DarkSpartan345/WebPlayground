@@ -1,4 +1,3 @@
-from django.forms.models import BaseModelForm
 from .forms import UserCreationFormWithEmail, EmailForm
 from django.views.generic import CreateView
 from django.views.generic.edit import UpdateView
@@ -44,5 +43,5 @@ class EmailUpdate(UpdateView):
          return self.request.user
     def get_form(self, form_class=None):
         form=super(EmailUpdate,self).get_form()
-        form.fields['email'].widget=forms.TextInput(attrs={'class':'form-control mb-2','placeholder':"correo Electronico"})
+        form.fields['email'].widget=forms.EmailInput(attrs={'class':'form-control mb-2','placeholder':"correo Electronico"})
         return form
